@@ -1,0 +1,146 @@
+@import url(config/reset.less);
+@import url(config/container.less);
+
+@cor_barra_superior:#2E5859; 
+@cor_btn:#D9B902;
+@cor_btn_h:#84772D;
+@bg_section:#84772D;
+
+@mediaDesktop: ~"(min-width:800px)";
+
+header {
+    background-color: @cor_barra_superior;
+    padding: 1em 0em;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
+}
+
+h1 {
+    font-family: "Oswald", sans-serif;
+}
+#menu_insetos_desktop 
+{
+    display: none;
+    ul {
+        li {
+            list-style: none;
+            display: inline;
+            margin-left: 1em;
+            background-color: @cor_btn;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            &:hover {
+                background-color: @cor_btn_h;
+                cursor: pointer;
+            }
+        
+            a{
+                text-decoration: none;
+                text-transform: uppercase;
+                color: white;
+                font-weight: bolder;
+            }
+        }
+    } 
+}
+
+#menu_mobile {
+    &:hover {
+        cursor: pointer;
+    }
+    span{
+        width: 45px;
+        display: block;
+        height: 4px;
+        background-color: white;
+        margin-bottom: 8px;
+    }
+}
+
+#aba_lateral {
+    background-color:@cor_barra_superior;
+    width: 80%;
+    position: fixed;
+    right: -900px;
+    transition: 1s;
+    #menu_list_mobile {
+        padding: 1em 1em; 
+
+        ul li {
+            list-style: none;
+            padding: .5em;
+            margin-bottom: .25em;
+
+            a{
+                text-transform: uppercase;
+                text-decoration: none;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &:hover {
+                background-color: @cor_btn;
+            }
+        }
+    }
+}
+section {
+    padding: 2.5em 0px;
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        gap: 8px;
+
+        img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 5px;
+            margin: 0px auto;
+            margin-bottom: 1em;
+        }
+        .text {
+            max-width: 350px;
+            width: 100%;
+            margin: 1em auto;
+            h2{
+                margin-bottom: 1em;
+
+            }
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+#abelha {
+    background-color: @bg_section;
+    color: white;
+}
+footer {
+    background-color: @cor_barra_superior;
+    padding: 1em 0px;
+    text-align: center;
+    color: white;
+}
+@media @mediaDesktop {
+
+    #menu_insetos_desktop  {
+        display: block;
+    }
+    #menu_mobile {
+        display: none;
+    }
+
+    #aba_lateral {
+        display: none;
+    }
+    
+}
